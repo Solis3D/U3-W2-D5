@@ -1,5 +1,6 @@
 import { Container, Navbar, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logoMeteo from "../assets/images/logoMeteo.png";
 
 const MyNavbar = function (props) {
   const handleSubmit = (e) => {
@@ -12,7 +13,7 @@ const MyNavbar = function (props) {
       <Navbar bg="dark-subtle" data-bs-theme="dark">
         <Container fluid className="px-3 py-1">
           <Link to="/">
-            <Image src="../src/assets/images/logoMeteo.png" style={{ width: "150px" }} className="me-4"></Image>
+            <Image src={logoMeteo} style={{ width: "150px" }} className="me-4"></Image>
           </Link>
           <Form onSubmit={handleSubmit} className=" d-flex gap-2">
             <Form.Control
