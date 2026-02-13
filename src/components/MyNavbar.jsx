@@ -1,4 +1,4 @@
-import { Row, Col, Container, Nav, Navbar, Form, Button, InputGroup, Image } from "react-bootstrap";
+import { Container, Navbar, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const MyNavbar = function (props) {
