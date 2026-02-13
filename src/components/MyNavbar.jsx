@@ -10,9 +10,9 @@ const MyNavbar = function (props) {
   return (
     <>
       <Navbar bg="dark-subtle" data-bs-theme="dark">
-        <Container fluid className="px-4 py-1">
+        <Container fluid className="px-3 py-1">
           <Link to="/">
-            <Image src="../public/assets/images/logoMeteo.png" style={{ width: "150px" }}></Image>
+            <Image src="../public/assets/images/logoMeteo.png" style={{ width: "150px" }} className="me-4"></Image>
           </Link>
           <Form onSubmit={handleSubmit} className=" d-flex gap-2">
             <Form.Control
