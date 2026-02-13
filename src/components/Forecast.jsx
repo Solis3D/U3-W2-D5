@@ -56,47 +56,45 @@ const Forecast = function (props) {
   }
 
   return (
-    <Container className="mt-3 mb-4">
-      <Row className="gap-3">
-        {isLoading && (
-          <div className=" text-center p-5">
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>{" "}
-          </div>
-        )}
+    <Row className=" g-2 gap-5 justify-content-center mb-4 px-3 px-md-0">
+      {isLoading && (
+        <div className=" text-center p-5">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>{" "}
+        </div>
+      )}
 
-        {!isLoading && (
-          <div className="text-center my-3">
-            <h1 className="text-capitalize">{props.city}</h1>
-            <h3>5 days Forecast</h3>
-            <hr className="mt-3" />
-          </div>
-        )}
+      {!isLoading && (
+        <div className="text-center my-3">
+          <h1 className="text-capitalize">{props.city}</h1>
+          <h3>5 days Forecast</h3>
+          <hr className="mt-3" />
+        </div>
+      )}
 
-        {!isLoading &&
-          dailyMeteo &&
-          Object.entries(dailyMeteo).map(([day, hours]) => (
-            <Col key={day} className="rounded p-3" style={{ backgroundColor: "#40648E" }}>
-              <h4 className="mb-3 fs-3">{day}</h4>
-              <hr />
+      {!isLoading &&
+        dailyMeteo &&
+        Object.entries(dailyMeteo).map(([day, hours]) => (
+          <Col xs={12} md={5} lg="1" key={day} className="rounded p-3" style={{ backgroundColor: "#40648E" }}>
+            <h4 className="mb-3 fs-3">{day}</h4>
+            <hr />
 
-              {hours.map((hour) => (
-                <div key={hour.dt}>
-                  <div className=" d-flex align-items-center justify-content-between">
-                    <p className=" d-inline m-0">
-                      {hour.dt_txt.slice(11, 16)} – {Math.round(hour.main.temp)} C°
-                    </p>
-                    <Image src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`}></Image>
-                  </div>
-                  <p className="m-0 text-capitalize">{hour.weather[0].description}</p>
-                  <hr />
+            {hours.map((hour) => (
+              <div key={hour.dt}>
+                <div className=" d-flex align-items-center justify-content-between">
+                  <p className=" d-inline m-0">
+                    {hour.dt_txt.slice(11, 16)} – {Math.round(hour.main.temp)} C°
+                  </p>
+                  <Image src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`}></Image>
                 </div>
-              ))}
-            </Col>
-          ))}
-      </Row>
-    </Container>
+                <p className="m-0 text-capitalize">{hour.weather[0].description}</p>
+                <hr />
+              </div>
+            ))}
+          </Col>
+        ))}
+    </Row>
   );
 };
 
