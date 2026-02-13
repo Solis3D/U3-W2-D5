@@ -77,9 +77,9 @@ const CurrentMeteo = function (props) {
               </Col>
             </Row>
             <hr className="my-4 mx-2" />
-            <div className=" d-flex justify-content-center">
-              <Link to="/Forecast">
-                <Button variant="dark" className=" me-4 mb-3 btn-outline-primary text-light">
+            <div className=" d-flex justify-content-center mb-3">
+              <Link to="/Forecast" className="text-center">
+                <Button variant="dark" className=" btn-outline-primary text-light">
                   View Forecast
                 </Button>
               </Link>
